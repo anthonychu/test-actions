@@ -2,6 +2,7 @@ on: push
 
 jobs:
   one:
+    if: env.foo
     runs-on: ubuntu-16.04
     steps:
       - name: Dump GitHub context

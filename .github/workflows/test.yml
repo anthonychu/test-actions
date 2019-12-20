@@ -4,10 +4,10 @@ jobs:
   one:
     env:
       foo: bar
-    if: env.foo
     runs-on: ubuntu-16.04
     steps:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+          thing: ${{ join(env.foo, '-test' }}
+        run: echo $thing

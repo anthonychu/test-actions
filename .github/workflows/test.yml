@@ -9,5 +9,5 @@ jobs:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-          thing: ${{ join(env.foo, '-test') }}
+          thing: ${{ join('env.foo', '-test') }}
         run: echo "$thing"

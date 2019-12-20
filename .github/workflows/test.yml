@@ -4,10 +4,12 @@ jobs:
   one:
     env:
       foo: bar
+      environment: dev
+      dev-foo: dev-bar
     runs-on: ubuntu-16.04
     steps:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-          thing: ${{ format('{0}{1}', env.foo, '-test') }}
+          thing: ${{ env[format('{0}{1}', env.environment, 'foo')] }}
         run: echo "$thing"

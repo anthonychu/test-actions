@@ -11,5 +11,5 @@ jobs:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-          thing: ${{ env[format('{0}{1}', env.environment, 'foo')] }}
+          thing: ${{ env[format('{0}-{1}', env.environment, 'foo')] }}
         run: echo "$thing"

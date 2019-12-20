@@ -10,4 +10,4 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           thing: ${{ join(env.foo, '-test') }}
-        run: echo $thing
+        run: echo "$thing"
